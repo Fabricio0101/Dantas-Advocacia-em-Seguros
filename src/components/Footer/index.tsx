@@ -168,41 +168,6 @@ export default function Footer() {
                                     />
                                 </HStack>
                             </HStack>
-                            <HStack
-                                w="90%"
-                                alignItems="center"
-                                justifyContent="start"
-                                color="white"
-                            >
-                                <Link
-                                    href="#inicio"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
-                                    Home
-                                </Link>
-                                <Link
-                                    href="#proposito"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
-                                    Sobre
-                                </Link>
-                                <Link
-                                    href="#fluxo"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
-                                    Serviços
-                                </Link>
-                                <Link
-                                    href="#associar"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
-                                    Contato
-                                </Link>
-                            </HStack>
                         </VStack>
                         <VStack
                             w="90%"
