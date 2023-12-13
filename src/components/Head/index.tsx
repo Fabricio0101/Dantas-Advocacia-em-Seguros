@@ -10,13 +10,14 @@ import {
     HStack,
     Icon,
     Image,
-    Link,
     VStack,
     useBreakpointValue,
     useDisclosure
 } from "@chakra-ui/react"
 
 import React, { MutableRefObject } from "react"
+
+import { Link } from 'react-router-dom'
 
 import { HiMenuAlt3 } from 'react-icons/hi'
 
@@ -26,13 +27,6 @@ import Marca from '../../assets/Asterisco.png'
 
 export default function Head() {
 
-    const scrollToSection = (sectionId: string) => {
-        const section = document.getElementById(sectionId)
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
-
     const isMobileVersion = useBreakpointValue({
         base: true,
         lg: false,
@@ -41,10 +35,6 @@ export default function Head() {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     const btnRef: MutableRefObject<HTMLButtonElement | null> = React.useRef(null)
-
-    const isValueText = window.innerWidth >= 768;
-
-    const valueTextMenu = isValueText ? '25' : '18'
 
     return (
         <>
@@ -64,34 +54,13 @@ export default function Head() {
                             alignItems="center"
                             justifyContent="start"
                             color="white"
+                            gap="30px"
                         >
-                            <Link
-                                href="#inicio"
-                                pr="35px"
-                                textDecoration="none"
-                            >
+                            <Link to="/">
                                 Home
                             </Link>
-                            <Link
-                                href="#proposito"
-                                pr="35px"
-                                textDecoration="none"
-                            >
+                            <Link to="/sobre">
                                 Sobre
-                            </Link>
-                            <Link
-                                href="#fluxo"
-                                pr="35px"
-                                textDecoration="none"
-                            >
-                                Serviços
-                            </Link>
-                            <Link
-                                href="#associar"
-                                pr="35px"
-                                textDecoration="none"
-                            >
-                                Contato
                             </Link>
                         </HStack>
                     </HStack>
@@ -149,11 +118,14 @@ export default function Head() {
                                         justifyContent="center"
                                         alignItems="start"
                                         gap={5}
+                                        color="white"
                                     >
-                                        <Link onClick={() => scrollToSection('Home')} fontFamily="Chivo" fontSize={`${valueTextMenu}px`} bg="transparent" color="white" fontWeight={500}>Início</Link>
-                                        <Link onClick={() => scrollToSection('Sobre')} fontFamily="Chivo" fontSize={`${valueTextMenu}px`} bg="transparent" color="white" fontWeight={500}>Nosso propósito</Link>
-                                        <Link onClick={() => scrollToSection('Serviços')} fontFamily="Chivo" fontSize={`${valueTextMenu}px`} bg="transparent" color="white" fontWeight={500}>Como funciona</Link>
-                                        <Link onClick={() => scrollToSection('contato')} fontFamily="Chivo" fontSize={`${valueTextMenu}px`} bg="transparent" color="white" fontWeight={500}>Contato</Link>
+                                        <Link to="/">
+                                            Home
+                                        </Link>
+                                        <Link to="/sobre">
+                                            Sobre
+                                        </Link>
                                         <a
                                             target="_blank"
                                             rel="noopener noreferrer"

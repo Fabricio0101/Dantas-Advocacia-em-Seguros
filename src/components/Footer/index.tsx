@@ -5,8 +5,9 @@ import {
     Image,
     VStack,
     useBreakpointValue,
-    Link,
 } from "@chakra-ui/react"
+
+import { Link } from 'react-router-dom'
 
 import Logo from '../../assets/marca.png'
 import Marca from '../../assets/Asterisco.png'
@@ -70,33 +71,11 @@ export default function Footer() {
                                 justifyContent="center"
                                 color="white"
                             >
-                                <Link
-                                    href="#inicio"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
+                                <Link to="/">
                                     Home
                                 </Link>
-                                <Link
-                                    href="#proposito"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
+                                <Link to="/sobre">
                                     Sobre
-                                </Link>
-                                <Link
-                                    href="#fluxo"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
-                                    Serviços
-                                </Link>
-                                <Link
-                                    href="#associar"
-                                    pr="35px"
-                                    textDecoration="none"
-                                >
-                                    Contato
                                 </Link>
                             </HStack>
                         </VStack>
@@ -115,7 +94,7 @@ export default function Footer() {
                                     {
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '50px',
+                                        fontSize: '43px',
                                         fontWeight: '400'
                                     }
                                 }

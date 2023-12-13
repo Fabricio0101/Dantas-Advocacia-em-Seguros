@@ -227,11 +227,11 @@ export default function Home() {
                                 fontSize="32px"
                                 fontFamily="Chivo"
                             >
-                                Não desperdiçamos<br /><span style={{ paddingRight: '100px' }}></span><span style={
+                                Não desperdiçamos<br /><span style={{ paddingRight: '80px' }}></span><span style={
                                     {
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '50px',
+                                        fontSize: '45px',
                                         fontWeight: '400'
                                     }
                                 } >o seu tempo.</span>
@@ -293,7 +293,7 @@ export default function Home() {
                                     alignItems="end"
                                     p="30px"
                                     border="1px solid white"
-                                    borderRadius="60px"
+                                    borderRadius="30px"
                                 >
                                     <Heading
                                         textAlign="end"
@@ -301,8 +301,7 @@ export default function Home() {
                                         fontFamily="Chivo"
                                         fontWeight="400"
                                     >
-                                        Conheça o nosso<br />
-                                        profissional sênior
+                                        Conheça o nosso profissional sênior
                                     </Heading>
                                     <Heading
                                         textAlign="end"
@@ -342,7 +341,7 @@ export default function Home() {
                             </VStack>
                         </HStack>
                         <HStack
-                            w="850px"
+                            w="1000px"
                             zIndex="3"
                             ml="-220px"
                             justifyContent="center"
@@ -356,10 +355,10 @@ export default function Home() {
                                 zIndex="3"
                                 mt="-100px"
                             >
-                                <Image w="60%" src={AsteriscoVerde} />
+                                <Image w="40%" src={AsteriscoVerde} />
                             </Stack>
                             <Stack
-                                w="80%"
+                                w="72%"
                                 justifyContent="center"
                                 alignItems="center"
                                 gap="5"
@@ -441,7 +440,7 @@ export default function Home() {
                         pb="70px"
                     >
                         <HStack
-                            mt="280px"
+                            mt="170px"
                             w="100%"
                             justifyContent="center"
                             alignItems="center"
