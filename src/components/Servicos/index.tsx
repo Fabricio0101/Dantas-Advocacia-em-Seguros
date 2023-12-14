@@ -4,9 +4,7 @@ import {
     HStack,
     Heading,
     Image,
-    ListItem,
     Stack,
-    UnorderedList,
     VStack,
     useBreakpointValue,
 } from "@chakra-ui/react"
