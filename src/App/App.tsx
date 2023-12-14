@@ -6,6 +6,7 @@ import Head from '../components/Head'
 import Footer from '../components/Footer'
 import Sobre from '../components/Sobre'
 import Servicos from '../components/Servicos'
+import Contato from '../components/Contato'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
+          <Route path="/contato" element={<Contato />} />
         </Routes>
         <Footer />
       </Flex>

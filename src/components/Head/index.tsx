@@ -65,6 +65,9 @@ export default function Head() {
                             <Link to="/servicos">
                                 Servicos
                             </Link>
+                            <Link to="/contato">
+                                Contato
+                            </Link>
                         </HStack>
                     </HStack>
                 </Flex>
@@ -131,6 +134,9 @@ export default function Head() {
                                         </Link>
                                         <Link to="/servicos">
                                             Servicos
+                                        </Link>
+                                        <Link to="/contato">
+                                            Contato
                                         </Link>
                                         <a
                                             target="_blank"
