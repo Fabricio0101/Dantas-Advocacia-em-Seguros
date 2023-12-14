@@ -5,6 +5,7 @@ import Home from '../components/Home'
 import Head from '../components/Head'
 import Footer from '../components/Footer'
 import Sobre from '../components/Sobre'
+import Servicos from '../components/Servicos'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/servicos" element={<Servicos />} />
         </Routes>
         <Footer />
       </Flex>
