@@ -156,7 +156,8 @@ export default function Contato() {
                                     <h2>
                                         <AccordionButton>
                                             <Box as="span" flex='1' textAlign='left'>
-                                                Estou sendo demandado pela seguradora. Qual medida adotar?                                            </Box>
+                                                Estou sendo demandado pela seguradora. Qual medida adotar?
+                                            </Box>
                                             <AccordionIcon />
                                         </AccordionButton>
                                     </h2>
@@ -176,7 +177,8 @@ export default function Contato() {
                                     <h2>
                                         <AccordionButton>
                                             <Box as="span" flex='1' textAlign='left'>
-                                                Fui indenizado pela seguradora. Como saber se o valor que recebi está correto?                                            </Box>
+                                                Fui indenizado pela seguradora. Como saber se o valor que recebi está correto?
+                                            </Box>
                                             <AccordionIcon />
                                         </AccordionButton>
                                     </h2>
@@ -210,7 +212,7 @@ export default function Contato() {
                             bgPosition="right"
                         >
                             <Heading
-                                fontSize="38px"
+                                fontSize="28px"
                                 fontFamily="Chivo"
                                 fontWeight="400"
                                 color="#0D3A40"
@@ -219,7 +221,7 @@ export default function Contato() {
                                     {
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '45px',
+                                        fontSize: '30px',
                                         fontWeight: '400'
                                     }
                                 } >é outra?.</span>

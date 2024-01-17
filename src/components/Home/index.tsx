@@ -14,9 +14,9 @@ import {
 
 import Asterisco from '../../assets/Asterisco.png'
 
-import Automovel from '../../assets/automovel.svg'
-import Patrimonial from '../../assets/patrimonial.svg'
-import Acidentes from '../../assets/vida-acidentespessoais.svg'
+import Automovel from '../../assets/automovel.png'
+import Patrimonial from '../../assets/patrimonial.png'
+import Acidentes from '../../assets/vida-acidentespessoais.png'
 
 import Caneta from '../../assets/Caneta.png'
 import AsteriscoVerde from '../../assets/AsteriscoVerde.svg'
@@ -25,8 +25,13 @@ import bgStack from '../../assets/elemento.svg'
 
 import '../../../style/global.css'
 import React from "react"
+import { Link } from "react-router-dom"
 
 export default function Home() {
+
+    const isHigthScreen = window.innerWidth <= 1396;
+
+    const flexHigth = isHigthScreen ? '88vh' : '83vh'
 
     const [value, setValue] = React.useState('1')
 
@@ -34,6 +39,10 @@ export default function Home() {
         base: true,
         lg: false,
     })
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
 
     return (
         <>
@@ -143,63 +152,83 @@ export default function Home() {
                             alignItems="center"
                             gap="10"
                         >
-                            <VStack
-                                w="250px"
-                                h="250px"
-                                justifyContent="center"
-                                alignItems="center"
-                                border="solid 1px #0D3A40"
-                                borderRadius="20px"
-                                gap="10"
-                            >
-                                <Image w="40%" src={Automovel} />
-                                <Heading
-                                    fontSize="24px"
-                                    fontWeight="400"
-                                    fontFamily="Chivo"
-                                    textAlign="center"
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <VStack
+                                    w="250px"
+                                    h="250px"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    border="solid 1px #0D3A40"
+                                    borderRadius="20px"
+                                    gap="10"
+                                    transition="0.2s"
+                                    _hover={{
+                                        background: '#113237',
+                                    }}
                                 >
-                                    Automóvel
-                                </Heading>
-                            </VStack>
-                            <VStack
-                                w="250px"
-                                h="250px"
-                                justifyContent="center"
-                                alignItems="center"
-                                border="solid 1px #0D3A40"
-                                borderRadius="20px"
-                                gap="10"
-                            >
-                                <Image w="40%" src={Patrimonial} />
-                                <Heading
-                                    fontSize="24px"
-                                    fontWeight="400"
-                                    fontFamily="Chivo"
-                                    textAlign="center"
+
+                                    <Image w="40%" src={Automovel} />
+                                    <Heading
+                                        fontSize="24px"
+                                        fontWeight="400"
+                                        fontFamily="Chivo"
+                                        textAlign="center"
+                                    >
+                                        Automóvel
+                                    </Heading>
+
+                                </VStack>
+                            </Link>
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <VStack
+                                    w="250px"
+                                    h="250px"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    border="solid 1px #0D3A40"
+                                    borderRadius="20px"
+                                    gap="10"
+                                    transition="0.2s"
+                                    _hover={{
+                                        background: '#113237',
+                                    }}
                                 >
-                                    Patrimonial
-                                </Heading>
-                            </VStack>
-                            <VStack
-                                w="250px"
-                                h="250px"
-                                justifyContent="center"
-                                alignItems="center"
-                                border="solid 1px #0D3A40"
-                                borderRadius="20px"
-                                gap="10"
-                            >
-                                <Image w="40%" src={Acidentes} />
-                                <Heading
-                                    fontSize="24px"
-                                    fontWeight="400"
-                                    fontFamily="Chivo"
-                                    textAlign="center"
+                                    <Image w="40%" src={Patrimonial} />
+                                    <Heading
+                                        fontSize="24px"
+                                        fontWeight="400"
+                                        fontFamily="Chivo"
+                                        textAlign="center"
+                                    >
+                                        Patrimonial
+                                    </Heading>
+                                </VStack>
+                            </Link>
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <VStack
+                                    w="250px"
+                                    h="250px"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    border="solid 1px #0D3A40"
+                                    borderRadius="20px"
+                                    gap="10"
+                                    transition="0.2s"
+                                    _hover={{
+                                        background: '#113237',
+                                    }}
                                 >
-                                    Vida e Acidentes<br />Pessoais
-                                </Heading>
-                            </VStack>
+                                    <Image w="50%" src={Acidentes} />
+                                    <Heading
+                                        fontSize="24px"
+                                        fontWeight="400"
+                                        fontFamily="Chivo"
+                                        textAlign="center"
+                                    >
+                                        Vida e Acidentes<br />Pessoais
+                                    </Heading>
+                                </VStack>
+                            </Link>
                         </HStack>
                     </VStack>
                     {/* conteudo 3 */}
@@ -224,10 +253,10 @@ export default function Home() {
                             bgPosition="left"
                         >
                             <Heading
-                                fontSize="32px"
+                                fontSize="30px"
                                 fontFamily="Chivo"
                             >
-                                Não desperdiçamos<br /><span style={{ paddingRight: '80px' }}></span><span style={
+                                Não desperdiçamos<br /><span style={{ paddingRight: '65px' }}></span><span style={
                                     {
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
@@ -238,13 +267,13 @@ export default function Home() {
                             </Heading>
                         </Stack>
                         <Stack
-                            w="50%"
+                            w="40%"
                             justifyContent="center"
                             alignItems="end"
                             gap="10"
                         >
                             <Heading
-                                fontSize="16px"
+                                fontSize="14px"
                                 fontFamily="Chivo"
                                 fontWeight="400"
                             >
@@ -341,24 +370,21 @@ export default function Home() {
                             </VStack>
                         </HStack>
                         <HStack
-                            w="1000px"
+                            w="100%"
                             zIndex="3"
-                            ml="-220px"
                             justifyContent="center"
                             alignItems="center"
-                            gap="50"
+                            gap="90"
                         >
+
+                            <Image
+                                w="200px"
+                                src={AsteriscoVerde}
+                                mt="-40px"
+                            />
+
                             <Stack
-                                w="57%"
-                                justifyContent="center"
-                                alignItems="center"
-                                zIndex="3"
-                                mt="-100px"
-                            >
-                                <Image w="40%" src={AsteriscoVerde} />
-                            </Stack>
-                            <Stack
-                                w="72%"
+                                w={flexHigth}
                                 justifyContent="center"
                                 alignItems="center"
                                 gap="5"

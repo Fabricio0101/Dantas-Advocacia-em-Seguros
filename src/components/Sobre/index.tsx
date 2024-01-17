@@ -19,6 +19,7 @@ import Caneta from '../../assets/CanetaElemento.png'
 import Elemento from '../../assets/elementoClaro.svg'
 
 import '../../../style/global.css'
+import { Link } from "react-router-dom"
 
 export default function Sobre() {
 
@@ -26,6 +27,10 @@ export default function Sobre() {
         base: true,
         lg: false,
     })
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     return (
         <>
@@ -42,21 +47,21 @@ export default function Sobre() {
                 >
                     {/* conteudo 1 */}
                     <HStack
-                        w="100%"
+                        w="80%"
                         h="90vh"
                         justifyContent="center"
                         alignItems="center"
-                        gap="100px"
+                        gap="80px"
                     >
                         <Stack>
-                            <Heading fontSize="88px" fontFamily="Chivo">
+                            <Heading fontSize="68px" fontFamily="Chivo">
                                 Conheça a
                                 <br />
                                 <span style={{ paddingRight: '100px' }}></span>
                                 <span style={{
                                     fontFamily: 'Libre Baskerville',
                                     fontStyle: 'italic',
-                                    fontSize: '112px',
+                                    fontSize: '80px',
                                     fontWeight: '400'
                                 }}>
                                     Nossa Equipe
@@ -92,7 +97,7 @@ export default function Sobre() {
                                 w="100%"
                                 gap="10"
                             >
-                                <Image w="85%" src={Elemento} />
+                                <Image w="65%" src={Elemento} />
                             </VStack>
                         </Stack>
                     </HStack>
@@ -241,7 +246,7 @@ export default function Sobre() {
                     {/* conteudo 4 */}
                     <VStack
                         w="50%"
-                        h="140vh"
+                        h="160vh"
                         mt="100px"
                         ml="-120px"
                         bg="#0A292D"
@@ -279,12 +284,12 @@ export default function Sobre() {
                                 h="280px"
                                 borderRadius="20px"
                                 justifyContent="center"
-                                alignItems="center"
+                                alignItems="start"
                                 p="30px"
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="20px"
+                                    fontSize="17px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
@@ -317,12 +322,12 @@ export default function Sobre() {
                                 h="280px"
                                 borderRadius="20px"
                                 justifyContent="center"
-                                alignItems="center"
+                                alignItems="start"
                                 p="30px"
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="20px"
+                                    fontSize="17px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
@@ -363,12 +368,12 @@ export default function Sobre() {
                                 h="280px"
                                 borderRadius="20px"
                                 justifyContent="center"
-                                alignItems="center"
+                                alignItems="start"
                                 p="30px"
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="20px"
+                                    fontSize="17px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
@@ -401,12 +406,12 @@ export default function Sobre() {
                                 h="280px"
                                 borderRadius="20px"
                                 justifyContent="center"
-                                alignItems="center"
+                                alignItems="start"
                                 p="30px"
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="20px"
+                                    fontSize="17px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
@@ -439,23 +444,26 @@ export default function Sobre() {
                             justifyContent="center"
                             alignItems="center"
                         >
-                            <Button
-                                bg="#DBF6F6"
-                                w="250px"
-                                h="55px"
-                                color="#0A292D"
-                                borderRadius="30px"
-                                fontFamily="Chivo"
-                                fontSize="14px"
-                                fontWeight="400"
-                                _hover={{
-                                    bg: 'transparent',
-                                    border: 'solid 2px #DBF6F6',
-                                    color: '#DBF6F6'
-                                }}
-                            >
-                                CONHEÇA NOSSOS SERVIÇOS
-                            </Button>
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <Button
+                                    bg="#DBF6F6"
+                                    w="250px"
+                                    h="55px"
+                                    color="#0A292D"
+                                    borderRadius="30px"
+                                    fontFamily="Chivo"
+                                    fontSize="14px"
+                                    fontWeight="400"
+                                    _hover={{
+                                        bg: 'transparent',
+                                        border: 'solid 2px #DBF6F6',
+                                        color: '#DBF6F6'
+                                    }}
+                                >
+                                    CONHEÇA NOSSOS SERVIÇOS
+                                </Button>
+                            </Link>
+
                         </Stack>
                     </VStack>
                 </Flex>

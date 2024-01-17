@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom'
 import Logo from '../../assets/marca.png'
 import Marca from '../../assets/Asterisco.png'
 
+import '../Head/style.css'
+
 export default function Footer() {
 
     const isMobileVersion = useBreakpointValue({
@@ -70,12 +72,19 @@ export default function Footer() {
                                 alignItems="center"
                                 justifyContent="center"
                                 color="white"
+                                gap="10"
                             >
-                                <Link to="/">
+                                <Link to="/" className="meu-link">
                                     Home
                                 </Link>
-                                <Link to="/sobre">
+                                <Link to="/sobre" className="meu-link">
                                     Sobre
+                                </Link>
+                                <Link to="/servicos" className="meu-link">
+                                    Servicos
+                                </Link>
+                                <Link to="/contato" className="meu-link">
+                                    Contato
                                 </Link>
                             </HStack>
                         </VStack>
@@ -84,7 +93,7 @@ export default function Footer() {
                             justify="center"
                             h="100%"
                             align="flex-start"
-                            gap="10"
+                            gap="30"
                         >
                             <Heading
                                 fontSize="32px"

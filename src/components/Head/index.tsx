@@ -25,6 +25,8 @@ import Logo from '../../assets/marca.png'
 
 import Marca from '../../assets/Asterisco.png'
 
+import './style.css'
+
 export default function Head() {
 
     const isMobileVersion = useBreakpointValue({
@@ -56,16 +58,16 @@ export default function Head() {
                             color="white"
                             gap="30px"
                         >
-                            <Link to="/">
+                            <Link to="/" className="meu-link">
                                 Home
                             </Link>
-                            <Link to="/sobre">
+                            <Link to="/sobre" className="meu-link">
                                 Sobre
                             </Link>
-                            <Link to="/servicos">
+                            <Link to="/servicos" className="meu-link">
                                 Servicos
                             </Link>
-                            <Link to="/contato">
+                            <Link to="/contato" className="meu-link">
                                 Contato
                             </Link>
                         </HStack>

@@ -11,12 +11,13 @@ import {
 
 
 import ElementoVerde from '../../assets/AsteriscoVerde.svg'
-import Carro from '../../assets/automovel.svg'
-import Vida from '../../assets/vida-acidentespessoais.svg'
-import Patrimoniais from '../../assets/patrimonial.svg'
+import Carro from '../../assets/automovel.png'
+import Vida from '../../assets/vida-acidentespessoais.png'
+import Patrimoniais from '../../assets/patrimonial.png'
 import bgStack from '../../assets/elemento.svg'
 import Uniao from '../../assets/Uniao.png'
 import Anotacao from '../../assets/Anotacao.svg'
+import { Link } from "react-router-dom"
 
 export default function Servicos() {
 
@@ -24,6 +25,10 @@ export default function Servicos() {
         base: true,
         lg: false,
     })
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     return (
         <>
@@ -47,8 +52,8 @@ export default function Servicos() {
                         gap="100px"
                     >
                         <HStack
-                            w="75%"
-                            h="50vh"
+                            w="1005px"
+                            h="55vh"
                             justifyContent="center"
                             alignItems="center"
                             gap="40"
@@ -57,7 +62,7 @@ export default function Servicos() {
                             borderRadius="60px"
                         >
                             <Heading
-                                fontSize="80px"
+                                fontSize="60px"
                                 fontFamily="Chivo"
                                 textAlign="end"
                             >
@@ -67,7 +72,7 @@ export default function Servicos() {
                                 <span style={{
                                     fontFamily: 'Libre Baskerville',
                                     fontStyle: 'italic',
-                                    fontSize: '112px',
+                                    fontSize: '100px',
                                     fontWeight: '400'
                                 }}>
                                     Soluções
@@ -137,6 +142,23 @@ export default function Servicos() {
                             borderRadius="30px"
                         >
                             <Stack
+                                h="100%"
+                                w="100px"
+                                alignItems="start"
+                                justifyContent="start"
+                            >
+                                <Button
+                                    bg="transparent"
+                                    _hover={{
+                                        background: 'transparent'
+                                    }}
+                                    fontSize="120px"
+                                    color="#6097A3"
+                                >
+                                    .
+                                </Button>
+                            </Stack>
+                            <Stack
                                 w="50%"
                                 h="65vh"
                                 justifyContent="center"
@@ -158,7 +180,7 @@ export default function Servicos() {
                                     Proteção total do seus direitos para seu veículo
                                 </Heading>
                                 <Heading
-                                    fontSize="18px"
+                                    fontSize="16px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                 >
@@ -166,7 +188,7 @@ export default function Servicos() {
                                     direitos em casos de colisão, roubo, incêndio e danos a terceiros.
                                 </Heading>
                                 <Heading
-                                    fontSize="18px"
+                                    fontSize="16px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                 >
@@ -174,7 +196,7 @@ export default function Servicos() {
                                     garantindo que você tenha a cobertura que merece.
                                 </Heading>
                                 <Heading
-                                    fontSize="18px"
+                                    fontSize="16px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                 >
@@ -251,6 +273,23 @@ export default function Servicos() {
                                     direitos sejam respeitados.
                                 </Heading>
                             </Stack>
+                            <Stack
+                                h="100%"
+                                w="100px"
+                                alignItems="end"
+                                justifyContent="start"
+                            >
+                                <Button
+                                    bg="transparent"
+                                    _hover={{
+                                        background: 'transparent'
+                                    }}
+                                    fontSize="120px"
+                                    color="#6097A3"
+                                >
+                                    .
+                                </Button>
+                            </Stack>
                         </HStack>
                         <HStack
                             w="70%"
@@ -259,6 +298,23 @@ export default function Servicos() {
                             alignItems="center"
                             borderRadius="30px"
                         >
+                            <Stack
+                                h="100%"
+                                w="100px"
+                                alignItems="start"
+                                justifyContent="start"
+                            >
+                                <Button
+                                    bg="transparent"
+                                    _hover={{
+                                        background: 'transparent'
+                                    }}
+                                    fontSize="120px"
+                                    color="#6097A3"
+                                >
+                                    .
+                                </Button>
+                            </Stack>
                             <Stack
                                 w="50%"
                                 h="65vh"
@@ -407,7 +463,7 @@ export default function Servicos() {
                                     fontStyle: 'italic',
                                     fontSize: '35px',
                                     fontWeight: '400'
-                                }} >pode contar</span>
+                                }} > pode contar</span>
                             </Heading>
                             <Heading
                                 fontSize="16px"
@@ -605,23 +661,25 @@ export default function Servicos() {
                             justifyContent="center"
                             alignItems="center"
                         >
-                            <Button
-                                bg="#DBF6F6"
-                                w="250px"
-                                h="55px"
-                                color="#0A292D"
-                                borderRadius="30px"
-                                fontFamily="Chivo"
-                                fontSize="14px"
-                                fontWeight="400"
-                                _hover={{
-                                    bg: 'transparent',
-                                    border: 'solid 2px #DBF6F6',
-                                    color: '#DBF6F6'
-                                }}
-                            >
-                                CONHEÇA NOSSOS SERVIÇOS
-                            </Button>
+                            <Link to="/contato" onClick={scrollToTop}>
+                                <Button
+                                    bg="#DBF6F6"
+                                    w="250px"
+                                    h="55px"
+                                    color="#0A292D"
+                                    borderRadius="30px"
+                                    fontFamily="Chivo"
+                                    fontSize="14px"
+                                    fontWeight="400"
+                                    _hover={{
+                                        bg: 'transparent',
+                                        border: 'solid 2px #DBF6F6',
+                                        color: '#DBF6F6'
+                                    }}
+                                >
+                                    ENTRE EM CONTATO AGORA
+                                </Button>
+                            </Link>
                         </Stack>
                     </VStack>
                 </Flex>
