@@ -884,23 +884,25 @@ export default function Sobre() {
                             justifyContent="center"
                             alignItems="center"
                         >
-                            <Button
-                                bg="#DBF6F6"
-                                w="250px"
-                                h="55px"
-                                color="#0A292D"
-                                borderRadius="30px"
-                                fontFamily="Chivo"
-                                fontSize="14px"
-                                fontWeight="400"
-                                _hover={{
-                                    bg: 'transparent',
-                                    border: 'solid 2px #DBF6F6',
-                                    color: '#DBF6F6'
-                                }}
-                            >
-                                CONHEÇA NOSSOS SERVIÇOS
-                            </Button>
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <Button
+                                    bg="#DBF6F6"
+                                    w="250px"
+                                    h="55px"
+                                    color="#0A292D"
+                                    borderRadius="30px"
+                                    fontFamily="Chivo"
+                                    fontSize="14px"
+                                    fontWeight="400"
+                                    _hover={{
+                                        bg: 'transparent',
+                                        border: 'solid 2px #DBF6F6',
+                                        color: '#DBF6F6'
+                                    }}
+                                >
+                                    CONHEÇA NOSSOS SERVIÇOS
+                                </Button>
+                            </Link>
                         </Stack>
                     </VStack>
                 </Flex>

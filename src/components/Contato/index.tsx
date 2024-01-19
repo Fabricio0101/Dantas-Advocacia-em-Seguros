@@ -51,7 +51,7 @@ export default function Contato() {
                         alignItems="center"
                     >
                         <Heading
-                            fontSize="88px"
+                            fontSize="77px"
                             fontFamily="Chivo"
                             color="#0A292D"
                             zIndex="3"
@@ -77,7 +77,7 @@ export default function Contato() {
                             <Image w="20%" src={AsteriscoVerde} />
                         </Stack>
                         <Stack
-                            w="1150px"
+                            w="1010px"
                             justifyContent="start"
                             alignItems="start"
                         >
@@ -120,10 +120,12 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Quando uma indenização é negada pela seguradora, é importante agir com cautela.
+                                        Primeiramente, mantenha a calma e não aceite a decisão sem questionar.
+                                        Entre em contato conosco imediatamente para uma avaliação precisa do seu caso.
+                                        Podemos analisar os termos da apólice, as circunstâncias do sinistro e as razões para a negativa.
+                                        Com nossa experiência em Direito do Seguro, podemos orientá-lo sobre os passos apropriados a tomar
+                                        para contestar essa decisão e buscar a justa indenização a que você tem direito.
                                     </AccordionPanel>
                                 </AccordionItem>
                                 <AccordionItem
@@ -141,10 +143,11 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Se sua solicitação de seguro foi recusada pela seguradora, você ainda tem direitos e opções.
+                                        A recusa deve ser baseada em critérios legais e objetivos. Entre em contato conosco para uma
+                                        análise detalhada da situação. Podemos avaliar se a recusa foi justificada e orientá-lo sobre
+                                        quais medidas podem ser tomadas para buscar a reconsideração ou contestar a decisão.
+                                        Sua proteção é nossa prioridade.
                                     </AccordionPanel>
                                 </AccordionItem>
                                 <AccordionItem
@@ -162,10 +165,10 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Se você está enfrentando uma demanda da seguradora, é crucial agir rapidamente e de maneira estratégica.
+                                        Entre em contato conosco para discutir os detalhes da demanda e avaliar suas opções.
+                                        Nossa equipe experiente pode analisar a legalidade da demanda, revisar os termos do contrato e
+                                        fornecer orientações sobre como responder de maneira eficaz.
                                     </AccordionPanel>
                                 </AccordionItem>
                                 <AccordionItem
@@ -183,10 +186,11 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Determinar se o valor da indenização é justo e adequado requer conhecimento especializado.
+                                        Nossa equipe pode revisar a apólice, os termos do contrato e as circunstâncias do sinistro
+                                        para avaliar se o valor oferecido está em conformidade com o contrato e a legislação aplicável.
+                                        Se houver discrepâncias ou preocupações, podemos negociar com a seguradora em seu nome para garantir
+                                        uma indenização justa e condizente com suas necessidades.
                                     </AccordionPanel>
                                 </AccordionItem>
                             </Accordion>
@@ -194,7 +198,7 @@ export default function Contato() {
                     </VStack>
                     {/* conteudo 3 */}
                     <HStack
-                        w="60%"
+                        w="80%"
                         h="35vh"
                         mt="150px"
                         justifyContent="center"
@@ -208,11 +212,11 @@ export default function Contato() {
                             alignItems="center"
                             bgImage={bgStack}
                             bgRepeat="no-repeat"
-                            bgSize="40%"
+                            bgSize="37%"
                             bgPosition="right"
                         >
                             <Heading
-                                fontSize="28px"
+                                fontSize="38px"
                                 fontFamily="Chivo"
                                 fontWeight="400"
                                 color="#0D3A40"
@@ -221,7 +225,7 @@ export default function Contato() {
                                     {
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '30px',
+                                        fontSize: '50px',
                                         fontWeight: '400'
                                     }
                                 } >é outra?.</span>
@@ -552,10 +556,12 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Quando uma indenização é negada pela seguradora, é importante agir com cautela.
+                                        Primeiramente, mantenha a calma e não aceite a decisão sem questionar.
+                                        Entre em contato conosco imediatamente para uma avaliação precisa do seu caso.
+                                        Podemos analisar os termos da apólice, as circunstâncias do sinistro e as razões para a negativa.
+                                        Com nossa experiência em Direito do Seguro, podemos orientá-lo sobre os passos apropriados a tomar
+                                        para contestar essa decisão e buscar a justa indenização a que você tem direito.
                                     </AccordionPanel>
                                 </AccordionItem>
                                 <AccordionItem
@@ -573,10 +579,11 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Se sua solicitação de seguro foi recusada pela seguradora, você ainda tem direitos e opções.
+                                        A recusa deve ser baseada em critérios legais e objetivos. Entre em contato conosco para uma
+                                        análise detalhada da situação. Podemos avaliar se a recusa foi justificada e orientá-lo sobre
+                                        quais medidas podem ser tomadas para buscar a reconsideração ou contestar a decisão.
+                                        Sua proteção é nossa prioridade.
                                     </AccordionPanel>
                                 </AccordionItem>
                                 <AccordionItem
@@ -593,10 +600,10 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Se você está enfrentando uma demanda da seguradora, é crucial agir rapidamente e de maneira estratégica.
+                                        Entre em contato conosco para discutir os detalhes da demanda e avaliar suas opções.
+                                        Nossa equipe experiente pode analisar a legalidade da demanda, revisar os termos do contrato e
+                                        fornecer orientações sobre como responder de maneira eficaz.
                                     </AccordionPanel>
                                 </AccordionItem>
                                 <AccordionItem
@@ -613,10 +620,11 @@ export default function Contato() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.
+                                        Determinar se o valor da indenização é justo e adequado requer conhecimento especializado.
+                                        Nossa equipe pode revisar a apólice, os termos do contrato e as circunstâncias do sinistro
+                                        para avaliar se o valor oferecido está em conformidade com o contrato e a legislação aplicável.
+                                        Se houver discrepâncias ou preocupações, podemos negociar com a seguradora em seu nome para garantir
+                                        uma indenização justa e condizente com suas necessidades.
                                     </AccordionPanel>
                                 </AccordionItem>
                             </Accordion>

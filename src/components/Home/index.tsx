@@ -42,7 +42,7 @@ export default function Home() {
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+    }
 
     return (
         <>
@@ -763,44 +763,48 @@ export default function Home() {
                             alignItems="center"
                             gap="5"
                         >
-                            <VStack
-                                w="220px"
-                                h="220px"
-                                justifyContent="center"
-                                alignItems="center"
-                                border="solid 1px #0D3A40"
-                                borderRadius="20px"
-                                gap="10"
-                            >
-                                <Image w="40%" src={Automovel} />
-                                <Heading
-                                    fontSize="16px"
-                                    fontWeight="400"
-                                    fontFamily="Chivo"
-                                    textAlign="center"
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <VStack
+                                    w="180px"
+                                    h="205px"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    border="solid 1px #0D3A40"
+                                    borderRadius="20px"
+                                    gap="10"
                                 >
-                                    Automóvel
-                                </Heading>
-                            </VStack>
-                            <VStack
-                                w="220px"
-                                h="220px"
-                                justifyContent="center"
-                                alignItems="center"
-                                border="solid 1px #0D3A40"
-                                borderRadius="20px"
-                                gap="10"
-                            >
-                                <Image w="40%" src={Patrimonial} />
-                                <Heading
-                                    fontSize="16px"
-                                    fontWeight="400"
-                                    fontFamily="Chivo"
-                                    textAlign="center"
+                                    <Image w="30%" src={Automovel} />
+                                    <Heading
+                                        fontSize="16px"
+                                        fontWeight="400"
+                                        fontFamily="Chivo"
+                                        textAlign="center"
+                                    >
+                                        Automóvel
+                                    </Heading>
+                                </VStack>
+                            </Link>
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <VStack
+                                   w="180px"
+                                   h="205px"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    border="solid 1px #0D3A40"
+                                    borderRadius="20px"
+                                    gap="10"
                                 >
-                                    Patrimonial
-                                </Heading>
-                            </VStack>
+                                    <Image w="30%" src={Patrimonial} />
+                                    <Heading
+                                        fontSize="16px"
+                                        fontWeight="400"
+                                        fontFamily="Chivo"
+                                        textAlign="center"
+                                    >
+                                        Patrimonial
+                                    </Heading>
+                                </VStack>
+                            </Link>
                         </HStack>
                         <HStack
                             w="100%"
@@ -808,25 +812,27 @@ export default function Home() {
                             alignItems="center"
                             gap="10"
                         >
-                            <VStack
-                                w="220px"
-                                h="220px"
-                                justifyContent="center"
-                                alignItems="center"
-                                border="solid 1px #0D3A40"
-                                borderRadius="20px"
-                                gap="10"
-                            >
-                                <Image w="30%" src={Acidentes} />
-                                <Heading
-                                    fontSize="16px"
-                                    fontWeight="400"
-                                    fontFamily="Chivo"
-                                    textAlign="center"
+                            <Link to="/servicos" onClick={scrollToTop}>
+                                <VStack
+                                    w="220px"
+                                    h="220px"
+                                    justifyContent="center"
+                                    alignItems="center"
+                                    border="solid 1px #0D3A40"
+                                    borderRadius="20px"
+                                    gap="10"
                                 >
-                                    Vida e Acidentes<br />Pessoais
-                                </Heading>
-                            </VStack>
+                                    <Image w="30%" src={Acidentes} />
+                                    <Heading
+                                        fontSize="16px"
+                                        fontWeight="400"
+                                        fontFamily="Chivo"
+                                        textAlign="center"
+                                    >
+                                        Vida e Acidentes<br />Pessoais
+                                    </Heading>
+                                </VStack>
+                            </Link>
                         </HStack>
                     </VStack>
                     {/* conteudo 3 */}
