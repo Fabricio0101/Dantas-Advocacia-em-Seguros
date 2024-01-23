@@ -159,7 +159,7 @@ export default function Head() {
                                         <a
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            href="https://api.whatsapp.com/send?phone=558431131803">
+                                            href="https://w.app/0emAJs">
                                             <Button
                                                 bg="#6097A3"
                                                 w="220px"
