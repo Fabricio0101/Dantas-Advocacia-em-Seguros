@@ -1,68 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
 *:focus {
-    box-shadow: none !important;
-  }
+  box-shadow: none !important;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@font-face {
+  font-family: "Chivo";
+  src: url("/Font/Chivo/Chivo-ExtraLight.ttf");
+  font-style: ExtraLight;
+  font-weight: 200;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: "Chivo";
-    src: url("/Font/Chivo/Chivo-ExtraLight.ttf");
-    font-style: ExtraLight;
-    font-weight: 200;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: "Chivo";
-    src: url("/Font/Chivo/Chivo-Light.ttf");
-    font-style: Light;
-    font-weight: 300;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Chivo";
+  src: url("/Font/Chivo/Chivo-Light.ttf");
+  font-style: Light;
+  font-weight: 300;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: "Chivo";
-    src: url("/Font/Chivo/Chivo-Regular.ttf");
-    font-style: regular;
-    font-weight: 400;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: "Chivo";
-    src: url("/Font/Chivo/Chivo-Medium.ttf");
-    font-style: Medium;
-    font-weight: 500;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Chivo";
+  src: url("/Font/Chivo/Chivo-Regular.ttf");
+  font-style: regular;
+  font-weight: 400;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: "Chivo";
-    src: url("/Font/Chivo/Chivo-SemiBold.ttf");
-    font-style: SemiBold;
-    font-weight: 600;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Chivo";
+  src: url("/Font/Chivo/Chivo-Medium.ttf");
+  font-style: Medium;
+  font-weight: 500;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: "Chivo";
-    src: url("/Font/Chivo/Chivo-Bold.ttf");
-    font-style: Bold;
-    font-weight: 700;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Chivo";
+  src: url("/Font/Chivo/Chivo-SemiBold.ttf");
+  font-style: SemiBold;
+  font-weight: 600;
+  font-display: swap;
+}
 
-  @font-face {
-    font-family: "Chivo";
-    src: url("/Font/Chivo/Chivo-Black.ttf");
-    font-style: ExtraBold;
-    font-weight: 800;
-    font-display: swap;
-  }
+@font-face {
+  font-family: "Chivo";
+  src: url("/Font/Chivo/Chivo-Bold.ttf");
+  font-style: Bold;
+  font-weight: 700;
+  font-display: swap;
+}
 
-  
-  
+@font-face {
+  font-family: "Chivo";
+  src: url("/Font/Chivo/Chivo-Black.ttf");
+  font-style: ExtraBold;
+  font-weight: 800;
+  font-display: swap;
+}

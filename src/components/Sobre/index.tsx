@@ -38,6 +38,7 @@ export default function Sobre() {
                 <Flex
                     bg="#0A292D"
                     w="100%"
+                    id="sobre"
                     h="100%"
                     justifyContent="center"
                     alignItems="center"
@@ -323,7 +324,7 @@ export default function Sobre() {
                                 borderRadius="20px"
                                 justifyContent="center"
                                 alignItems="start"
-                                p="30px"
+                                p="40px"
                                 gap="5"
                             >
                                 <Heading

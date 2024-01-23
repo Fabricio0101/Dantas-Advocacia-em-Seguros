@@ -16,11 +16,13 @@ import {
     Stack,
     VStack,
     useBreakpointValue,
+    useToast,
 } from "@chakra-ui/react"
 
 import AsteriscoVerde from '../../assets/AsteriscoVerde.svg'
 import bgStack from '../../assets/elementoVerde.svg'
-import React from "react"
+import React, { useRef, useState } from "react"
+import axios from "axios"
 
 export default function Contato() {
 
@@ -31,12 +33,109 @@ export default function Contato() {
 
     const [value, setValue] = React.useState('1')
 
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+    const handleButtonClick = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.click();
+        }
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const inputFiles = e.target.files;
+
+        if (inputFiles && inputFiles.length > 0) {
+            const selectedFile = inputFiles[0];
+            console.log('Arquivo selecionado:', selectedFile);
+        }
+    }
+
+    const [insertNome, setInsertNome] = useState('')
+    const [insertEmail, setInsertEmail] = useState('')
+    const [insertSeguradora, setInsertSeguradora] = useState('')
+    const [insertMensagem, setInsertMensagem] = useState('')
+
+    const toast = useToast()
+
+    const handleInputName = (event: any) => {
+        setInsertNome(event.target.value);
+    }
+
+    const handleInputEmail = (event: any) => {
+        setInsertEmail(event.target.value);
+    }
+
+    const handleInputSeguradora = (event: any) => {
+        setInsertSeguradora(event.target.value);
+    }
+
+    const handleInputMensagem = (event: any) => {
+        setInsertMensagem(event.target.value);
+    }
+
+    function sendEmail(e: any) {
+        e.preventDefault()
+
+        if (insertNome === '' ||
+            insertEmail === '' ||
+            insertSeguradora === '' ||
+            insertMensagem == ''
+        ) {
+            toast({
+                title: 'Erro ao enviar o e-mail',
+                description: 'Por favor, preencha todos os campos obrigatórios.',
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+                position: 'top'
+            })
+            return
+        }
+
+        const dados = new FormData()
+        dados.append('nome', insertNome);
+        dados.append('email', insertEmail);
+        dados.append('Seguradora', insertSeguradora);
+        dados.append('RadioValue', value);
+        dados.append('mensagem', insertMensagem);
+
+        axios.post('https://formspree.io/f/mleqdyod', dados)
+            .then(response => {
+                console.log(response.data);
+                toast({
+                    title: 'E-mail enviado com sucesso!',
+                    description: 'Em breve entraremos em contato.',
+                    status: 'success',
+                    duration: 5000,
+                    isClosable: true,
+                    position: 'top'
+                })
+            })
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+                toast({
+                    title: 'Erro ao enviar o e-mail',
+                    description: 'Houve um erro ao enviar o formulário, tente novamente.',
+                    status: 'error',
+                    duration: 5000,
+                    isClosable: true,
+                    position: 'top'
+                })
+            })
+
+        setInsertNome('')
+        setInsertEmail('')
+        setInsertSeguradora('')
+        setInsertMensagem('')
+    }
+
     return (
         <>
             {!isMobileVersion && (
                 <Flex
                     bg="#DBF6F6"
                     w="100%"
+                    id="contato"
                     h="100%"
                     justifyContent="center"
                     alignItems="center"
@@ -96,7 +195,8 @@ export default function Contato() {
                     {/* conteudo 2 */}
                     <VStack
                         w="100%"
-                        h="60vh"
+                        h="80vh"
+                        p="20px 0px 20px 0px"
                         justifyContent="center"
                         alignItems="center"
                     >
@@ -104,7 +204,7 @@ export default function Contato() {
                             <Accordion
                                 color="white"
                                 defaultIndex={[0]}
-                                allowMultiple
+                                allowToggle
                             >
                                 <AccordionItem
                                     bg="#0D3A40"
@@ -113,7 +213,7 @@ export default function Contato() {
                                 >
                                     <h2>
                                         <AccordionButton>
-                                            <Box as="span" flex='1' textAlign='left'>
+                                            <Box as="span" flex='1' textAlign='left' fontWeight="700">
                                                 Tive uma indenização negada pela seguradora. O que fazer?
                                             </Box>
                                             <AccordionIcon />
@@ -136,7 +236,7 @@ export default function Contato() {
                                 >
                                     <h2>
                                         <AccordionButton>
-                                            <Box as="span" flex='1' textAlign='left'>
+                                            <Box as="span" flex='1' textAlign='left' fontWeight="700">
                                                 Tive meu contrato recusado pela seguradora. Quais os meus direitos?
                                             </Box>
                                             <AccordionIcon />
@@ -158,7 +258,7 @@ export default function Contato() {
                                 >
                                     <h2>
                                         <AccordionButton>
-                                            <Box as="span" flex='1' textAlign='left'>
+                                            <Box as="span" flex='1' textAlign='left' fontWeight="700">
                                                 Estou sendo demandado pela seguradora. Qual medida adotar?
                                             </Box>
                                             <AccordionIcon />
@@ -179,7 +279,7 @@ export default function Contato() {
                                 >
                                     <h2>
                                         <AccordionButton>
-                                            <Box as="span" flex='1' textAlign='left'>
+                                            <Box as="span" flex='1' textAlign='left' fontWeight="700">
                                                 Fui indenizado pela seguradora. Como saber se o valor que recebi está correto?
                                             </Box>
                                             <AccordionIcon />
@@ -212,7 +312,7 @@ export default function Contato() {
                             alignItems="center"
                             bgImage={bgStack}
                             bgRepeat="no-repeat"
-                            bgSize="37%"
+                            bgSize="29%"
                             bgPosition="right"
                         >
                             <Heading
@@ -269,6 +369,7 @@ export default function Contato() {
                     <VStack
                         w="60%"
                         mt="90px"
+                        id="form"
                         bg="#DBF6F6"
                         justifyContent="center"
                         alignItems="center"
@@ -318,6 +419,8 @@ export default function Contato() {
                                 color="#0A292D"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputName}
+                                value={insertNome}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -339,6 +442,8 @@ export default function Contato() {
                                 borderRadius="30px"
                                 h="40px"
                                 bg="transparent"
+                                onChange={handleInputEmail}
+                                value={insertEmail}
                                 border="2px solid #0A292D"
                                 _hover={{
                                     border: '2px solid #3C7178'
@@ -359,6 +464,8 @@ export default function Contato() {
                                 borderRadius="30px"
                                 h="40px"
                                 bg="transparent"
+                                onChange={handleInputSeguradora}
+                                value={insertSeguradora}
                                 border="2px solid #0A292D"
                                 _hover={{
                                     border: '2px solid #3C7178'
@@ -379,12 +486,12 @@ export default function Contato() {
                                     gap="10"
                                     pb="10px"
                                 >
-                                    <Radio border="2px solid #0A292D" value='1'>Seguro automotivo</Radio>
-                                    <Radio border="2px solid #0A292D" value='2'>Seguro patriminial</Radio>
-                                    <Radio border="2px solid #0A292D" value='3'>Outros</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro automotivo'>Seguro automotivo</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro patriminial'>Seguro patriminial</Radio>
+                                    <Radio border="2px solid #0A292D" value='Outros'>Outros</Radio>
                                 </Stack>
                                 <Stack direction='row' color="#0A292D">
-                                    <Radio border="2px solid #0A292D" value='4'>Seguro de vida e<br />acidentes pessoais</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro de vida e acidentes pessoais'>Seguro de vida e<br />acidentes pessoais</Radio>
                                 </Stack>
                             </RadioGroup>
                             <Heading
@@ -402,6 +509,8 @@ export default function Contato() {
                                 borderRadius="30px"
                                 h="110px"
                                 bg="transparent"
+                                onChange={handleInputMensagem}
+                                value={insertMensagem}
                                 border="2px solid #0A292D"
                                 _hover={{
                                     border: '2px solid #3C7178'
@@ -432,6 +541,7 @@ export default function Contato() {
                                     bg="#6097A3"
                                     w="220px"
                                     h="55px"
+                                    onClick={handleButtonClick}
                                     borderRadius="30px"
                                     fontFamily="Chivo"
                                     fontSize="14px"
@@ -443,6 +553,12 @@ export default function Contato() {
                                 >
                                     ADICIONAR ARQUIVO
                                 </Button>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                />
                             </Stack>
                         </HStack>
                         <Button
@@ -450,6 +566,7 @@ export default function Contato() {
                             w="150px"
                             h="55px"
                             color="white"
+                            onClick={sendEmail}
                             borderRadius="30px"
                             fontFamily="Chivo"
                             fontSize="14px"
@@ -532,7 +649,8 @@ export default function Contato() {
                     {/* conteudo 2 */}
                     <VStack
                         w="100%"
-                        h="60vh"
+                        h="80vh"
+
                         justifyContent="center"
                         alignItems="center"
                     >
@@ -540,7 +658,7 @@ export default function Contato() {
                             <Accordion
                                 color="white"
                                 defaultIndex={[0]}
-                                allowMultiple
+                                allowToggle
                             >
                                 <AccordionItem
                                     bg="#0D3A40"
@@ -753,6 +871,8 @@ export default function Contato() {
                                 color="#0A292D"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputName}
+                                value={insertNome}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -773,6 +893,8 @@ export default function Contato() {
                                 color="#0A292D"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputEmail}
+                                value={insertEmail}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -793,6 +915,8 @@ export default function Contato() {
                                 w="100%"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputSeguradora}
+                                value={insertSeguradora}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -814,12 +938,12 @@ export default function Contato() {
                                     gap="10"
                                     pb="20px"
                                 >
-                                    <Radio border="2px solid #0A292D" value='1'>Seguro automotivo</Radio>
-                                    <Radio border="2px solid #0A292D" value='2'>Seguro patriminial</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro automotivo'>Seguro automotivo</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro patriminial'>Seguro patriminial</Radio>
                                 </Stack>
                                 <Stack direction='row' color="#0A292D" gap="10">
-                                    <Radio border="2px solid #0A292D" value='3'>Outros</Radio>
-                                    <Radio border="2px solid #0A292D" value='4'>Seguro de vida e<br />acidentes pessoais</Radio>
+                                    <Radio border="2px solid #0A292D" value='Outros'>Outros</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro de vida e acidentes pessoais'>Seguro de vida e<br />acidentes pessoais</Radio>
                                 </Stack>
                             </RadioGroup>
                             <Heading
@@ -837,6 +961,8 @@ export default function Contato() {
                                 w="100%"
                                 borderRadius="30px"
                                 h="110px"
+                                onChange={handleInputMensagem}
+                                value={insertMensagem}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -868,6 +994,7 @@ export default function Contato() {
                                     bg="#6097A3"
                                     w="220px"
                                     h="55px"
+                                    onClick={handleButtonClick}
                                     borderRadius="30px"
                                     fontFamily="Chivo"
                                     fontSize="14px"
@@ -879,12 +1006,19 @@ export default function Contato() {
                                 >
                                     ADICIONAR ARQUIVO
                                 </Button>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                />
                             </Stack>
                         </HStack>
                         <Button
                             bg="#0A292D"
                             w="150px"
                             h="55px"
+                            onClick={sendEmail}
                             color="white"
                             borderRadius="30px"
                             fontFamily="Chivo"

@@ -17,7 +17,7 @@ import {
 
 import React, { MutableRefObject } from "react"
 
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { HiMenuAlt3 } from 'react-icons/hi'
 
@@ -38,6 +38,12 @@ export default function Head() {
 
     const btnRef: MutableRefObject<HTMLButtonElement | null> = React.useRef(null)
 
+    const location = useLocation()
+    const isHomePage = location.pathname === "/"
+    const isSobrePage = location.pathname === "/sobre"
+    const isServicosPage = location.pathname === "/servicos"
+    const isContatoPage = location.pathname === "/contato"
+
     return (
         <>
             {!isMobileVersion && (
@@ -45,7 +51,17 @@ export default function Head() {
                     <HStack
                         w="100%"
                         h="90px"
-                        bg="#0A292D"
+                        bg={
+                            isHomePage
+                                ? "#0A292D"
+                                : isSobrePage
+                                    ? "#0A292D"
+                                    : isServicosPage
+                                        ? "#0D3A40"
+                                        : isContatoPage
+                                            ? "#DBF6F6"
+                                            : "#0A292D"
+                        }
                         justifyContent="center"
                         alignItems="center"
                         zIndex={8}
@@ -55,7 +71,7 @@ export default function Head() {
                             w="90%"
                             alignItems="center"
                             justifyContent="start"
-                            color="white"
+                            color={isContatoPage ? "#0A292D" : "white"}
                             gap="30px"
                         >
                             <Link to="/" className="meu-link">

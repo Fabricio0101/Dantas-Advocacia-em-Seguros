@@ -17,7 +17,7 @@ import Patrimoniais from '../../assets/patrimonial.png'
 import bgStack from '../../assets/elemento.svg'
 import Uniao from '../../assets/Uniao.png'
 import Anotacao from '../../assets/Anotacao.svg'
-import { Link } from "react-router-dom"
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default function Servicos() {
 
@@ -26,16 +26,13 @@ export default function Servicos() {
         lg: false,
     })
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
     return (
         <>
             {!isMobileVersion && (
                 <Flex
                     bg="#0D3A40"
                     w="100%"
+                    id="service"
                     h="100%"
                     justifyContent="center"
                     alignItems="center"
@@ -56,7 +53,7 @@ export default function Servicos() {
                             h="55vh"
                             justifyContent="center"
                             alignItems="center"
-                            gap="40"
+                            gap="90px"
                             p="0px 10px 0px 10px"
                             border="1px solid white"
                             borderRadius="60px"
@@ -78,16 +75,29 @@ export default function Servicos() {
                                     Soluções
                                 </span>
                             </Heading>
-                            <Heading
-                                fontSize="20px"
-                                fontFamily="Chivo"
-                                fontWeight="400"
-                                lineHeight="28px"
+                            <Stack
+                                w="305px"
+                                h="85vh"
+                                mb="340px"
+                                justifyContent="end"
+                                alignItems="center"
+                                gap="40"
+                                p="0px 10px 0px 10px"
+                                border="1px solid white"
+                                borderRadius="60px"
                             >
-                                Direito do Seguro<br />
-                                para te proteger<br />
-                                de verdade.
-                            </Heading>
+                                <Heading
+                                    pb="90px"
+                                    fontSize="20px"
+                                    fontFamily="Chivo"
+                                    fontWeight="400"
+                                    lineHeight="28px"
+                                >
+                                    Direito do Seguro<br />
+                                    para te proteger<br />
+                                    de verdade.
+                                </Heading>
+                            </Stack>
                         </HStack>
                         <HStack
                             w="70%"
@@ -161,6 +171,7 @@ export default function Servicos() {
                             <Stack
                                 w="50%"
                                 h="65vh"
+                                id="automovel"
                                 justifyContent="center"
                                 alignItems="start"
                                 gap="5"
@@ -231,6 +242,7 @@ export default function Servicos() {
                             <Stack
                                 w="50%"
                                 h="65vh"
+                                id="vida"
                                 justifyContent="center"
                                 alignItems="end"
                                 gap="5"
@@ -318,6 +330,7 @@ export default function Servicos() {
                             <Stack
                                 w="50%"
                                 h="65vh"
+                                id="patrimoniais"
                                 justifyContent="center"
                                 alignItems="start"
                                 gap="5"
@@ -661,7 +674,7 @@ export default function Servicos() {
                             justifyContent="center"
                             alignItems="center"
                         >
-                            <Link to="/contato" onClick={scrollToTop}>
+                            <Link to="/contato#form">
                                 <Button
                                     bg="#DBF6F6"
                                     w="250px"
@@ -726,16 +739,29 @@ export default function Servicos() {
                                 </span>
                                 <br />
                             </Heading>
-                            <Heading
-                                fontSize="15px"
-                                fontFamily="Chivo"
-                                fontWeight="400"
-                                lineHeight="22px"
+                            <Stack
+                                w="145px"
+                                h="50vh"
+                                mb="340px"
+                                justifyContent="end"
+                                alignItems="center"
+                                gap="40"
+                                p="0px 10px 0px 10px"
+                                border="1px solid white"
+                                borderRadius="40px"
                             >
-                                Direito do Seguro<br />
-                                para te proteger<br />
-                                de verdade.
-                            </Heading>
+                                <Heading
+                                    pb="20px"
+                                    fontSize="14px"
+                                    fontFamily="Chivo"
+                                    fontWeight="400"
+                                    lineHeight="22px"
+                                >
+                                    Direito do Seguro<br />
+                                    para te proteger<br />
+                                    de verdade.
+                                </Heading>
+                            </Stack>
                         </HStack>
                         <VStack
                             w="90%"
@@ -801,6 +827,7 @@ export default function Servicos() {
                             <Stack
                                 w="90%"
                                 h="40vh"
+                                id="automovel"
                                 justifyContent="center"
                                 alignItems="center"
                                 gap="5"
@@ -866,6 +893,7 @@ export default function Servicos() {
                             <Stack
                                 w="90%"
                                 h="40vh"
+                                id="vida"
                                 justifyContent="center"
                                 alignItems="center"
                                 gap="5"
@@ -926,6 +954,7 @@ export default function Servicos() {
                             <Stack
                                 w="90%"
                                 h="40vh"
+                                id="patrimoniais"
                                 justifyContent="center"
                                 alignItems="center"
                                 gap="5"
@@ -1267,23 +1296,25 @@ export default function Servicos() {
                             justifyContent="center"
                             alignItems="center"
                         >
-                            <Button
-                                bg="#DBF6F6"
-                                w="250px"
-                                h="55px"
-                                color="#0A292D"
-                                borderRadius="30px"
-                                fontFamily="Chivo"
-                                fontSize="14px"
-                                fontWeight="400"
-                                _hover={{
-                                    bg: 'transparent',
-                                    border: 'solid 2px #DBF6F6',
-                                    color: '#DBF6F6'
-                                }}
-                            >
-                                CONHEÇA NOSSOS SERVIÇOS
-                            </Button>
+                            <Link to="/contato#form">
+                                <Button
+                                    bg="#DBF6F6"
+                                    w="250px"
+                                    h="55px"
+                                    color="#0A292D"
+                                    borderRadius="30px"
+                                    fontFamily="Chivo"
+                                    fontSize="14px"
+                                    fontWeight="400"
+                                    _hover={{
+                                        bg: 'transparent',
+                                        border: 'solid 2px #DBF6F6',
+                                        color: '#DBF6F6'
+                                    }}
+                                >
+                                    CONHEÇA NOSSOS SERVIÇOS
+                                </Button>
+                            </Link>
                         </Stack>
                     </VStack>
                 </Flex>

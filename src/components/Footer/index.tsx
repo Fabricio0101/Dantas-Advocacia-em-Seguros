@@ -7,7 +7,7 @@ import {
     useBreakpointValue,
 } from "@chakra-ui/react"
 
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link';
 
 import Logo from '../../assets/marca.png'
 import Marca from '../../assets/Asterisco.png'
@@ -74,16 +74,16 @@ export default function Footer() {
                                 color="white"
                                 gap="10"
                             >
-                                <Link to="/" className="meu-link">
+                                <Link to="/#home" className="meu-link">
                                     Home
                                 </Link>
-                                <Link to="/sobre" className="meu-link">
+                                <Link to="/sobre#sobre" className="meu-link">
                                     Sobre
                                 </Link>
-                                <Link to="/servicos" className="meu-link">
+                                <Link to="/servicos#service" className="meu-link">
                                     Servicos
                                 </Link>
-                                <Link to="/contato" className="meu-link">
+                                <Link to="/contato#contato" className="meu-link">
                                     Contato
                                 </Link>
                             </HStack>

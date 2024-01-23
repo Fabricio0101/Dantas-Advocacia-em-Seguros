@@ -16,9 +16,9 @@ function App() {
         <Head />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/servicos" element={<Servicos />} />
-          <Route path="/contato" element={<Contato />} />
+          <Route path="/sobre/" element={<Sobre />} />
+          <Route path="/servicos/*" element={<Servicos />} />
+          <Route path="/contato/" element={<Contato />} />
         </Routes>
         <Footer />
       </Flex>

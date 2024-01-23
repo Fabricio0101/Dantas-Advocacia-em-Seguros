@@ -10,6 +10,7 @@ import {
     Stack,
     VStack,
     useBreakpointValue,
+    useToast,
 } from "@chakra-ui/react"
 
 import Asterisco from '../../assets/Asterisco.png'
@@ -24,8 +25,9 @@ import AsteriscoVerde from '../../assets/AsteriscoVerde.svg'
 import bgStack from '../../assets/elemento.svg'
 
 import '../../../style/global.css'
-import React from "react"
-import { Link } from "react-router-dom"
+import React, { useRef, useState } from "react"
+import { HashLink as Link } from 'react-router-hash-link';
+import axios from "axios"
 
 export default function Home() {
 
@@ -33,15 +35,107 @@ export default function Home() {
 
     const flexHigth = isHigthScreen ? '88vh' : '83vh'
 
-    const [value, setValue] = React.useState('1')
+    const [value, setValue] = React.useState('')
 
     const isMobileVersion = useBreakpointValue({
         base: true,
         lg: false,
     })
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+    const handleButtonClick = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.click();
+        }
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const inputFiles = e.target.files;
+
+        if (inputFiles && inputFiles.length > 0) {
+            const selectedFile = inputFiles[0];
+            console.log('Arquivo selecionado:', selectedFile);
+        }
+    }
+
+    const [insertNome, setInsertNome] = useState('')
+    const [insertEmail, setInsertEmail] = useState('')
+    const [insertSeguradora, setInsertSeguradora] = useState('')
+    const [insertMensagem, setInsertMensagem] = useState('')
+
+    const toast = useToast()
+
+    const handleInputName = (event: any) => {
+        setInsertNome(event.target.value);
+    }
+
+    const handleInputEmail = (event: any) => {
+        setInsertEmail(event.target.value);
+    }
+
+    const handleInputSeguradora = (event: any) => {
+        setInsertSeguradora(event.target.value);
+    }
+
+    const handleInputMensagem = (event: any) => {
+        setInsertMensagem(event.target.value);
+    }
+
+    function sendEmail(e: any) {
+        e.preventDefault()
+
+        if (insertNome === '' ||
+            insertEmail === '' ||
+            insertSeguradora === '' ||
+            insertMensagem == ''
+        ) {
+            toast({
+                title: 'Erro ao enviar o e-mail',
+                description: 'Por favor, preencha todos os campos obrigatórios.',
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+                position: 'top'
+            })
+            return
+        }
+
+        const dados = new FormData()
+        dados.append('nome', insertNome);
+        dados.append('email', insertEmail);
+        dados.append('Seguradora', insertSeguradora);
+        dados.append('RadioValue', value);
+        dados.append('mensagem', insertMensagem);
+
+        axios.post('https://formspree.io/f/mleqdyod', dados)
+            .then(response => {
+                console.log(response.data);
+                toast({
+                    title: 'E-mail enviado com sucesso!',
+                    description: 'Em breve entraremos em contato.',
+                    status: 'success',
+                    duration: 5000,
+                    isClosable: true,
+                    position: 'top'
+                })
+            })
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+                toast({
+                    title: 'Erro ao enviar o e-mail',
+                    description: 'Houve um erro ao enviar o formulário, tente novamente.',
+                    status: 'error',
+                    duration: 5000,
+                    isClosable: true,
+                    position: 'top'
+                })
+            })
+
+        setInsertNome('')
+        setInsertEmail('')
+        setInsertSeguradora('')
+        setInsertMensagem('')
     }
 
     return (
@@ -49,6 +143,7 @@ export default function Home() {
             {!isMobileVersion && (
                 <Flex
                     bg="#0A292D"
+                    id="home"
                     w="100%"
                     h="100%"
                     justifyContent="center"
@@ -152,7 +247,9 @@ export default function Home() {
                             alignItems="center"
                             gap="10"
                         >
-                            <Link to="/servicos" onClick={scrollToTop}>
+                            <Link
+                                to="/servicos#automovel"
+                            >
                                 <VStack
                                     w="250px"
                                     h="250px"
@@ -179,7 +276,7 @@ export default function Home() {
 
                                 </VStack>
                             </Link>
-                            <Link to="/servicos" onClick={scrollToTop}>
+                            <Link to="/servicos#patrimoniais">
                                 <VStack
                                     w="250px"
                                     h="250px"
@@ -204,7 +301,7 @@ export default function Home() {
                                     </Heading>
                                 </VStack>
                             </Link>
-                            <Link to="/servicos" onClick={scrollToTop}>
+                            <Link to="/servicos#vida">
                                 <VStack
                                     w="250px"
                                     h="250px"
@@ -280,23 +377,25 @@ export default function Home() {
                                 Antes de entrar com a demanda judicial, fazemos uma análise minuciosa de
                                 toda a apólice do seu seguro para traçar um <span style={{ textDecoration: 'underline' }} >plano estratégico de defesa.</span>
                             </Heading>
-                            <Button
-                                borderRadius="30px"
-                                bg="#0A292D"
-                                fontSize="16px"
-                                w="300px"
-                                h="65px"
-                                color="white"
-                                fontFamily="Chivo"
-                                fontWeight="400"
-                                textAlign="end"
-                                _hover={{
-                                    border: '2px solid white',
-                                    background: 'transparent',
-                                }}
-                            >
-                                ENTRE EM CONTATO AGORA
-                            </Button>
+                            <Link to="#contatar">
+                                <Button
+                                    borderRadius="30px"
+                                    bg="#0A292D"
+                                    fontSize="16px"
+                                    w="300px"
+                                    h="65px"
+                                    color="white"
+                                    fontFamily="Chivo"
+                                    fontWeight="400"
+                                    textAlign="end"
+                                    _hover={{
+                                        border: '2px solid white',
+                                        background: 'transparent',
+                                    }}
+                                >
+                                    ENTRE EM CONTATO AGORA
+                                </Button>
+                            </Link>
                         </Stack>
                     </HStack>
                     {/* conteudo 4 */}
@@ -458,6 +557,7 @@ export default function Home() {
                     <VStack
                         w="60%"
                         mt="-50px"
+                        id="contatar"
                         bg="#DBF6F6"
                         justifyContent="center"
                         alignItems="center"
@@ -506,6 +606,8 @@ export default function Home() {
                                 color="#0A292D"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputName}
+                                value={insertNome}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -527,6 +629,8 @@ export default function Home() {
                                 borderRadius="30px"
                                 h="40px"
                                 bg="transparent"
+                                onChange={handleInputEmail}
+                                value={insertEmail}
                                 border="2px solid #0A292D"
                                 _hover={{
                                     border: '2px solid #3C7178'
@@ -547,6 +651,8 @@ export default function Home() {
                                 borderRadius="30px"
                                 h="40px"
                                 bg="transparent"
+                                onChange={handleInputSeguradora}
+                                value={insertSeguradora}
                                 border="2px solid #0A292D"
                                 _hover={{
                                     border: '2px solid #3C7178'
@@ -567,12 +673,12 @@ export default function Home() {
                                     gap="10"
                                     pb="10px"
                                 >
-                                    <Radio border="2px solid #0A292D" value='1'>Seguro automotivo</Radio>
-                                    <Radio border="2px solid #0A292D" value='2'>Seguro patriminial</Radio>
-                                    <Radio border="2px solid #0A292D" value='3'>Outros</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro automotivo'>Seguro automotivo</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro patriminial'>Seguro patriminial</Radio>
+                                    <Radio border="2px solid #0A292D" value='Outros'>Outros</Radio>
                                 </Stack>
                                 <Stack direction='row' color="#0A292D">
-                                    <Radio border="2px solid #0A292D" value='4'>Seguro de vida e<br />acidentes pessoais</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro de vida e acidentes pessoais'>Seguro de vida e<br />acidentes pessoais</Radio>
                                 </Stack>
                             </RadioGroup>
                             <Heading
@@ -590,6 +696,8 @@ export default function Home() {
                                 borderRadius="30px"
                                 h="110px"
                                 bg="transparent"
+                                onChange={handleInputMensagem}
+                                value={insertMensagem}
                                 border="2px solid #0A292D"
                                 _hover={{
                                     border: '2px solid #3C7178'
@@ -620,6 +728,7 @@ export default function Home() {
                                     bg="#6097A3"
                                     w="220px"
                                     h="55px"
+                                    onClick={handleButtonClick}
                                     borderRadius="30px"
                                     fontFamily="Chivo"
                                     fontSize="14px"
@@ -631,6 +740,12 @@ export default function Home() {
                                 >
                                     ADICIONAR ARQUIVO
                                 </Button>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                />
                             </Stack>
                         </HStack>
                         <Button
@@ -638,6 +753,7 @@ export default function Home() {
                             w="150px"
                             h="55px"
                             color="white"
+                            onClick={sendEmail}
                             borderRadius="30px"
                             fontFamily="Chivo"
                             fontSize="14px"
@@ -651,7 +767,7 @@ export default function Home() {
                             Enviar
                         </Button>
                     </VStack>
-                </Flex>
+                </Flex >
             )}
 
             {isMobileVersion && (
@@ -763,7 +879,9 @@ export default function Home() {
                             alignItems="center"
                             gap="5"
                         >
-                            <Link to="/servicos" onClick={scrollToTop}>
+                            <Link
+                                to="/servicos#automovel"
+                            >
                                 <VStack
                                     w="180px"
                                     h="205px"
@@ -784,10 +902,10 @@ export default function Home() {
                                     </Heading>
                                 </VStack>
                             </Link>
-                            <Link to="/servicos" onClick={scrollToTop}>
+                            <Link to="/servicos#patrimoniais">
                                 <VStack
-                                   w="180px"
-                                   h="205px"
+                                    w="180px"
+                                    h="205px"
                                     justifyContent="center"
                                     alignItems="center"
                                     border="solid 1px #0D3A40"
@@ -812,7 +930,7 @@ export default function Home() {
                             alignItems="center"
                             gap="10"
                         >
-                            <Link to="/servicos" onClick={scrollToTop}>
+                            <Link to="/servicos#vida">
                                 <VStack
                                     w="220px"
                                     h="220px"
@@ -1107,6 +1225,8 @@ export default function Home() {
                                 color="#0A292D"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputName}
+                                value={insertNome}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -1127,6 +1247,8 @@ export default function Home() {
                                 color="#0A292D"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputEmail}
+                                value={insertEmail}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -1147,6 +1269,8 @@ export default function Home() {
                                 w="100%"
                                 borderRadius="30px"
                                 h="40px"
+                                onChange={handleInputSeguradora}
+                                value={insertSeguradora}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -1168,12 +1292,12 @@ export default function Home() {
                                     gap="10"
                                     pb="20px"
                                 >
-                                    <Radio border="2px solid #0A292D" value='1'>Seguro automotivo</Radio>
-                                    <Radio border="2px solid #0A292D" value='2'>Seguro patriminial</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro automotivo'>Seguro automotivo</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro patriminial'>Seguro patriminial</Radio>
                                 </Stack>
                                 <Stack direction='row' color="#0A292D" gap="10">
-                                    <Radio border="2px solid #0A292D" value='3'>Outros</Radio>
-                                    <Radio border="2px solid #0A292D" value='4'>Seguro de vida e<br />acidentes pessoais</Radio>
+                                    <Radio border="2px solid #0A292D" value='Outros'>Outros</Radio>
+                                    <Radio border="2px solid #0A292D" value='Seguro de vida e acidentes pessoais'>Seguro de vida e<br />acidentes pessoais</Radio>
                                 </Stack>
                             </RadioGroup>
                             <Heading
@@ -1191,6 +1315,8 @@ export default function Home() {
                                 w="100%"
                                 borderRadius="30px"
                                 h="110px"
+                                onChange={handleInputMensagem}
+                                value={insertMensagem}
                                 bg="transparent"
                                 border="2px solid #0A292D"
                                 _hover={{
@@ -1222,6 +1348,7 @@ export default function Home() {
                                     bg="#6097A3"
                                     w="220px"
                                     h="55px"
+                                    onClick={handleButtonClick}
                                     borderRadius="30px"
                                     fontFamily="Chivo"
                                     fontSize="14px"
@@ -1233,6 +1360,12 @@ export default function Home() {
                                 >
                                     ADICIONAR ARQUIVO
                                 </Button>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                />
                             </Stack>
                         </HStack>
                         <Button
@@ -1240,6 +1373,7 @@ export default function Home() {
                             w="150px"
                             h="55px"
                             color="white"
+                            onClick={sendEmail}
                             borderRadius="30px"
                             fontFamily="Chivo"
                             fontSize="14px"
@@ -1254,7 +1388,8 @@ export default function Home() {
                         </Button>
                     </VStack>
                 </Flex>
-            )}
+            )
+            }
         </>
     )
 }
