@@ -26,6 +26,10 @@ import axios from "axios"
 
 export default function Contato() {
 
+    const isHigthScreen = window.innerWidth <= 360;
+
+    const HeigthSize = isHigthScreen ? '120' : '80'
+
     const isMobileVersion = useBreakpointValue({
         base: true,
         lg: false,
@@ -328,7 +332,7 @@ export default function Contato() {
                                         fontSize: '50px',
                                         fontWeight: '400'
                                     }
-                                } >é outra?.</span>
+                                } >é outra?</span>
                             </Heading>
                         </Stack>
                         <Stack
@@ -649,7 +653,7 @@ export default function Contato() {
                     {/* conteudo 2 */}
                     <VStack
                         w="100%"
-                        h="80vh"
+                        h={`${HeigthSize}vh`}
 
                         justifyContent="center"
                         alignItems="center"

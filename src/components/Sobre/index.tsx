@@ -11,7 +11,7 @@ import {
     useBreakpointValue,
 } from "@chakra-ui/react"
 
-import Asterisco from '../../assets/Asterisco.png'
+import Logo from '../../assets/Logo_Completo.png'
 
 
 import Caneta from '../../assets/CanetaElemento.png'
@@ -48,13 +48,12 @@ export default function Sobre() {
                 >
                     {/* conteudo 1 */}
                     <HStack
-                        w="80%"
+                        w="100%"
                         h="90vh"
                         justifyContent="center"
                         alignItems="center"
-                        gap="80px"
                     >
-                        <Stack>
+                        <Stack w="40%">
                             <Heading fontSize="68px" fontFamily="Chivo">
                                 Conheça a
                                 <br />
@@ -62,7 +61,7 @@ export default function Sobre() {
                                 <span style={{
                                     fontFamily: 'Libre Baskerville',
                                     fontStyle: 'italic',
-                                    fontSize: '80px',
+                                    fontSize: '60px',
                                     fontWeight: '400'
                                 }}>
                                     Nossa Equipe
@@ -70,41 +69,28 @@ export default function Sobre() {
                             </Heading>
                         </Stack>
                         <Stack
+                            w="30%"
                             h="90vh"
-                            gap="100px"
+                            gap="60px"
                         >
-                            <HStack
-                                gap={5}
+                            <Stack
+                                justifyContent="center"
+                                alignItems="center"
                             >
-                                <Image src={Asterisco} />
-                                <Heading
-                                    fontSize="60px"
-                                    lineHeight="38px"
-                                    fontFamily="Chivo"
-                                >
-                                    Dantas<br />
-                                    <span style={{
-                                        fontWeight: '400',
-                                        fontSize: '30px',
-                                        lineHeight: '0px'
-                                    }}>
-                                        Advocacia<br />em seguros
-                                    </span>
-                                </Heading>
-                            </HStack>
+                                <Image w="60%" src={Logo} />
+                            </Stack>
                             <VStack
-                                justifyContent="start"
-                                alignItems="start"
+                                justifyContent="center"
+                                alignItems="center"
                                 w="100%"
                                 gap="10"
                             >
-                                <Image w="65%" src={Elemento} />
+                                <Image w="55%" src={Elemento} />
                             </VStack>
                         </Stack>
                     </HStack>
                     {/* conteudo 2 */}
                     <HStack
-                        w="100%"
                         h="100vh"
                         justifyContent="center"
                         alignItems="center"
@@ -496,23 +482,10 @@ export default function Sobre() {
                             alignItems="center"
                         >
                             <HStack
-                                gap={5}
+                                justifyContent="center"
+                                alignItems="center"
                             >
-                                <Image src={Asterisco} />
-                                <Heading
-                                    fontSize="52px"
-                                    lineHeight="38px"
-                                    fontFamily="Chivo"
-                                >
-                                    Dantas<br />
-                                    <span style={{
-                                        fontWeight: '400',
-                                        fontSize: '28px',
-                                        lineHeight: '0px'
-                                    }}>
-                                        Advocacia<br />em seguros
-                                    </span>
-                                </Heading>
+                                <Image w="70%" src={Logo} />
                             </HStack>
                         </Stack>
                         <Stack

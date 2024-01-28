@@ -94,6 +94,7 @@ export default function Footer() {
                             h="100%"
                             align="flex-start"
                             gap="30"
+                            color="#DBF6EF"
                         >
                             <Heading
                                 fontSize="32px"
@@ -119,7 +120,7 @@ export default function Footer() {
                                 fontWeight="400"
                                 textAlign="start"
                             >
-                                Ligue ou mande um Whatsapp para o número<br />(84)999820-4629.
+                                Ligue ou mande um Whatsapp para o número<br />+55(84)99633-8082
                             </Heading>
                             <Heading
                                 fontSize="16px"
@@ -183,6 +184,7 @@ export default function Footer() {
                             justifyContent="center"
                             alignItems="center"
                             gap="10"
+                            color="#DBF6EF"
                         >
                             <Heading
                                 fontSize="20px"
@@ -208,7 +210,7 @@ export default function Footer() {
                                 fontWeight="300"
                                 textAlign="center"
                             >
-                                Ligue ou mande um Whatsapp para o número<br />(84)999820-4629.
+                                Ligue ou mande um Whatsapp para o número<br />+55(84)99633-8082
                             </Heading>
                             <Heading
                                 fontSize="14px"

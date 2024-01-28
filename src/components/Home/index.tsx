@@ -13,8 +13,6 @@ import {
     useToast,
 } from "@chakra-ui/react"
 
-import Asterisco from '../../assets/Asterisco.png'
-
 import Automovel from '../../assets/automovel.png'
 import Patrimonial from '../../assets/patrimonial.png'
 import Acidentes from '../../assets/vida-acidentespessoais.png'
@@ -23,6 +21,8 @@ import Caneta from '../../assets/Caneta.png'
 import AsteriscoVerde from '../../assets/AsteriscoVerde.svg'
 
 import bgStack from '../../assets/elemento.svg'
+
+import Logo from '../../assets/Logo_Completo.png'
 
 import '../../../style/global.css'
 import React, { useRef, useState } from "react"
@@ -158,9 +158,12 @@ export default function Home() {
                         h="100vh"
                         justifyContent="center"
                         alignItems="center"
-                        gap="100px"
                     >
-                        <Stack>
+                        <Stack
+                            w="60%"
+                            justifyContent="center"
+                            alignItems="center"
+                        >
                             <Heading fontSize="88px" fontFamily="Chivo">
                                 Sinta-se
                                 <br />
@@ -178,28 +181,11 @@ export default function Home() {
                             </Heading>
                         </Stack>
                         <Stack
-                            h="90vh"
-                            gap="100px"
+                            h="70vh"
+                            w="30%"
+                            gap="20"
                         >
-                            <HStack
-                                gap={5}
-                            >
-                                <Image src={Asterisco} />
-                                <Heading
-                                    fontSize="60px"
-                                    lineHeight="38px"
-                                    fontFamily="Chivo"
-                                >
-                                    Dantas<br />
-                                    <span style={{
-                                        fontWeight: '400',
-                                        fontSize: '30px',
-                                        lineHeight: '0px'
-                                    }}>
-                                        Advocacia<br />em seguros
-                                    </span>
-                                </Heading>
-                            </HStack>
+                            <Image w="60%" src={Logo} />
                             <VStack
                                 justifyContent="start"
                                 alignItems="start"
@@ -812,25 +798,13 @@ export default function Home() {
                             justifyContent="center"
                             alignItems="center"
                         >
-                            <HStack
-                                gap={5}
+                            <Stack
+                                justifyContent="center"
+                                alignItems="center"
                             >
-                                <Image src={Asterisco} />
-                                <Heading
-                                    fontSize="52px"
-                                    lineHeight="38px"
-                                    fontFamily="Chivo"
-                                >
-                                    Dantas<br />
-                                    <span style={{
-                                        fontWeight: '400',
-                                        fontSize: '28px',
-                                        lineHeight: '0px'
-                                    }}>
-                                        Advocacia<br />em seguros
-                                    </span>
-                                </Heading>
-                            </HStack>
+                                <Image w="70%" src={Logo} />
+
+                            </Stack>
                             <VStack
                                 justifyContent="center"
                                 alignItems="center"
@@ -965,7 +939,7 @@ export default function Home() {
                         gap="10"
                     >
                         <Stack
-                            w="70%"
+                            w="80%"
                             h="210px"
                             justifyContent="center"
                             alignItems="center"
@@ -975,10 +949,10 @@ export default function Home() {
                             bgPosition="left"
                         >
                             <Heading
-                                fontSize="32px"
+                                fontSize="30px"
                                 fontFamily="Chivo"
                             >
-                                Não desperdiçamos<br /><span style={{ paddingRight: '70px' }}></span><span style={
+                                Não desperdiçamos<br /><span style={{ paddingRight: '80px' }}></span><span style={
                                     {
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
@@ -1003,23 +977,25 @@ export default function Home() {
                                 Antes de entrar com a demanda judicial, fazemos uma análise minuciosa de
                                 toda a apólice do seu seguro para traçar um <span style={{ textDecoration: 'underline' }} >plano estratégico de defesa.</span>
                             </Heading>
-                            <Button
-                                borderRadius="30px"
-                                bg="#0A292D"
-                                fontSize="13px"
-                                w="210px"
-                                h="55px"
-                                color="white"
-                                fontFamily="Chivo"
-                                fontWeight="400"
-                                textAlign="end"
-                                _hover={{
-                                    border: '2px solid white',
-                                    background: 'transparent',
-                                }}
-                            >
-                                ENTRE EM CONTATO AGORA
-                            </Button>
+                            <Link to="#contatar">
+                                <Button
+                                    borderRadius="30px"
+                                    bg="#0A292D"
+                                    fontSize="13px"
+                                    w="210px"
+                                    h="55px"
+                                    color="white"
+                                    fontFamily="Chivo"
+                                    fontWeight="400"
+                                    textAlign="end"
+                                    _hover={{
+                                        border: '2px solid white',
+                                        background: 'transparent',
+                                    }}
+                                >
+                                    ENTRE EM CONTATO AGORA
+                                </Button>
+                            </Link>
                         </Stack>
                     </VStack>
                     {/* conteudo 4 */}
@@ -1177,6 +1153,7 @@ export default function Home() {
                     <VStack
                         w="90%"
                         mt="-50px"
+                        id="contatar"
                         bg="#DBF6F6"
                         justifyContent="center"
                         alignItems="center"
