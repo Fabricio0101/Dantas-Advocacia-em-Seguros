@@ -81,7 +81,7 @@ export default function Head() {
                                 Sobre
                             </Link>
                             <Link to="/servicos" className="meu-link">
-                                Servicos
+                                Serviços
                             </Link>
                             <Link to="/contato" className="meu-link">
                                 Contato
@@ -151,7 +151,7 @@ export default function Head() {
                                             Sobre
                                         </Link>
                                         <Link to="/servicos">
-                                            Servicos
+                                            Serviços
                                         </Link>
                                         <Link to="/contato">
                                             Contato

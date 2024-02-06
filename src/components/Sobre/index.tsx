@@ -177,7 +177,7 @@ export default function Sobre() {
                                     PRATICIDADE<br /><span style={{
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '35px',
+                                        fontSize: '30px',
                                         fontWeight: '400'
                                     }} >simplificada</span>
                                 </Heading>
@@ -200,7 +200,7 @@ export default function Sobre() {
                                     TRANSPARÊNCIA<br /><span style={{
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '35px',
+                                        fontSize: '30px',
                                         fontWeight: '400'
                                     }} >& respeito</span>
                                 </Heading>
@@ -223,7 +223,7 @@ export default function Sobre() {
                                     ATENÇÃO AOS<br /><span style={{
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '35px',
+                                        fontSize: '30px',
                                         fontWeight: '400'
                                     }} >mínimos detalhes</span>
                                 </Heading>
@@ -233,7 +233,7 @@ export default function Sobre() {
                     {/* conteudo 4 */}
                     <VStack
                         w="50%"
-                        h="160vh"
+                        h="170vh"
                         mt="100px"
                         ml="-120px"
                         bg="#0A292D"
@@ -244,7 +244,6 @@ export default function Sobre() {
                         gap="10"
                     >
                         <Heading
-                            mt="40px"
                             textAlign="center"
                             fontSize="28px"
                             fontFamily="Chivo"
@@ -267,8 +266,8 @@ export default function Sobre() {
                         >
                             <Stack
                                 bg="#0D3A40"
-                                w="620px"
-                                h="280px"
+                                w="720px"
+                                h="320px"
                                 borderRadius="20px"
                                 justifyContent="center"
                                 alignItems="start"
@@ -276,14 +275,14 @@ export default function Sobre() {
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="17px"
+                                    fontSize="19px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
                                     Defesa para Seguro automotivo
                                 </Heading>
                                 <Heading
-                                    fontSize="13px"
+                                    fontSize="15px"
                                     fontFamily="Chivo"
                                     fontWeight="300"
                                 >
@@ -305,23 +304,23 @@ export default function Sobre() {
                             </Stack>
                             <Stack
                                 bg="#0D3A40"
-                                w="620px"
-                                h="280px"
+                                w="720px"
+                                h="320px"
                                 borderRadius="20px"
                                 justifyContent="center"
                                 alignItems="start"
-                                p="40px"
-                                gap="5"
+                                p="30px"
+                                gap="2"
                             >
                                 <Heading
-                                    fontSize="17px"
+                                    fontSize="18px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
                                     Defesa em Seguros de Vida e Acidentes Pessoais
                                 </Heading>
                                 <Heading
-                                    fontSize="13px"
+                                    fontSize="15px"
                                     fontFamily="Chivo"
                                     fontWeight="300"
                                 >
@@ -351,23 +350,23 @@ export default function Sobre() {
                         >
                             <Stack
                                 bg="#0D3A40"
-                                w="620px"
-                                h="280px"
+                                w="720px"
+                                h="320px"
                                 borderRadius="20px"
                                 justifyContent="center"
                                 alignItems="start"
                                 p="30px"
-                                gap="5"
+                                gap="4"
                             >
                                 <Heading
-                                    fontSize="17px"
+                                    fontSize="19px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
                                     Defesa em Seguros Patrimoniais
                                 </Heading>
                                 <Heading
-                                    fontSize="13px"
+                                    fontSize="15px"
                                     fontFamily="Chivo"
                                     fontWeight="300"
                                 >
@@ -389,8 +388,8 @@ export default function Sobre() {
                             </Stack>
                             <Stack
                                 bg="#0D3A40"
-                                w="620px"
-                                h="280px"
+                                w="720px"
+                                h="320px"
                                 borderRadius="20px"
                                 justifyContent="center"
                                 alignItems="start"
@@ -398,14 +397,14 @@ export default function Sobre() {
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="17px"
+                                    fontSize="19px"
                                     fontFamily="Chivo"
                                     fontWeight="500"
                                 >
                                     Responsabilidade Civil
                                 </Heading>
                                 <Heading
-                                    fontSize="13px"
+                                    fontSize="15px"
                                     fontFamily="Chivo"
                                     fontWeight="300"
                                 >
@@ -425,33 +424,25 @@ export default function Sobre() {
                                 </UnorderedList>
                             </Stack>
                         </HStack>
-                        <Stack
-                            w="100%"
-                            h="130vh"
-                            justifyContent="center"
-                            alignItems="center"
-                        >
-                            <Link to="/servicos" onClick={scrollToTop}>
-                                <Button
-                                    bg="#DBF6F6"
-                                    w="250px"
-                                    h="55px"
-                                    color="#0A292D"
-                                    borderRadius="30px"
-                                    fontFamily="Chivo"
-                                    fontSize="14px"
-                                    fontWeight="400"
-                                    _hover={{
-                                        bg: 'transparent',
-                                        border: 'solid 2px #DBF6F6',
-                                        color: '#DBF6F6'
-                                    }}
-                                >
-                                    CONHEÇA NOSSOS SERVIÇOS
-                                </Button>
-                            </Link>
-
-                        </Stack>
+                        <Link to="/servicos" onClick={scrollToTop}>
+                            <Button
+                                bg="#DBF6F6"
+                                w="250px"
+                                h="55px"
+                                color="#0A292D"
+                                borderRadius="30px"
+                                fontFamily="Chivo"
+                                fontSize="14px"
+                                fontWeight="400"
+                                _hover={{
+                                    bg: 'transparent',
+                                    border: 'solid 2px #DBF6F6',
+                                    color: '#DBF6F6'
+                                }}
+                            >
+                                CONHEÇA NOSSOS SERVIÇOS
+                            </Button>
+                        </Link>
                     </VStack>
                 </Flex>
             )}

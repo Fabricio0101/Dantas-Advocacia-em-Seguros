@@ -81,7 +81,7 @@ export default function Footer() {
                                     Sobre
                                 </Link>
                                 <Link to="/servicos#service" className="meu-link">
-                                    Servicos
+                                    Serviços
                                 </Link>
                                 <Link to="/contato#contato" className="meu-link">
                                     Contato

@@ -307,16 +307,16 @@ export default function Contato() {
                         mt="150px"
                         justifyContent="center"
                         alignItems="center"
-                        gap="60"
+                        gap="40"
                     >
                         <Stack
                             w="50%"
                             h="210px"
-                            justifyContent="center"
+                            justifyContent="start"
                             alignItems="center"
                             bgImage={bgStack}
                             bgRepeat="no-repeat"
-                            bgSize="29%"
+                            bgSize="35%"
                             bgPosition="right"
                         >
                             <Heading
@@ -337,7 +337,8 @@ export default function Contato() {
                         </Stack>
                         <Stack
                             w="50%"
-                            justifyContent="center"
+                            h="100%"
+                            justifyContent="start"
                             alignItems="start"
                             gap="10"
                         >
@@ -591,7 +592,7 @@ export default function Contato() {
                 <Flex
                     bg="#DBF6F6"
                     w="100%"
-                    h="100%"
+                    h="auto"
                     justifyContent="center"
                     alignItems="center"
                     color="#DBF6F6"
@@ -755,7 +756,7 @@ export default function Contato() {
                     {/* conteudo 3 */}
                     <VStack
                         w="90%"
-                        h="50vh"
+                        h="auto"
                         justifyContent="center"
                         alignItems="center"
                         gap="5"

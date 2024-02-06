@@ -31,10 +31,6 @@ import axios from "axios"
 
 export default function Home() {
 
-    const isHigthScreen = window.innerWidth <= 1396;
-
-    const flexHigth = isHigthScreen ? '88vh' : '83vh'
-
     const [value, setValue] = React.useState('')
 
     const isMobileVersion = useBreakpointValue({
@@ -339,11 +335,11 @@ export default function Home() {
                                 fontSize="30px"
                                 fontFamily="Chivo"
                             >
-                                Não desperdiçamos<br /><span style={{ paddingRight: '65px' }}></span><span style={
+                                Não desperdiçamos<br /><span style={{ paddingRight: '80px' }}></span><span style={
                                     {
                                         fontFamily: 'Libre Baskerville',
                                         fontStyle: 'italic',
-                                        fontSize: '45px',
+                                        fontSize: '38px',
                                         fontWeight: '400'
                                     }
                                 } >o seu tempo.</span>
@@ -392,13 +388,32 @@ export default function Home() {
                         justifyContent="center"
                         alignItems="center"
                     >
-                        <HStack>
-                            <Stack
-                                w="30%"
+                        <HStack
+                            w="100%"
+                            justifyContent="center"
+                            alignItems="center"
+                            gap="25px"
+                        >
+                            <VStack
+                                w="40%"
+                                h="80vh"
+                                justifyContent="center"
                             >
-                                <Image w="100%" src={Caneta} />
-                            </Stack>
-                            <VStack>
+                                <Image
+                                    sx={{
+                                        w: ['400px', '300px']
+                                    }}
+                                    src={Caneta}
+                                />
+                                <Image
+                                    sx={{
+                                        w: ['100px', '300px']
+                                    }}
+                                    mt="-80px"
+                                    src={AsteriscoVerde}
+                                />
+                            </VStack>
+                            <VStack w="60%">
                                 <Stack
                                     w="850px"
                                     zIndex="3"
@@ -428,85 +443,66 @@ export default function Home() {
                                     </Heading>
                                 </Stack>
                                 <br />
-                                <Heading
-                                    textAlign="start"
-                                    fontSize="32px"
-                                    fontFamily="Chivo"
-                                    fontWeight="400"
-                                >
-                                    + DE 30 ANOS DE <span style={{
-                                        fontFamily: 'Libre Baskerville',
-                                        fontStyle: 'italic',
-                                        fontSize: '42px',
-                                        fontWeight: '400'
-                                    }} >experiência</span> COM<br />SEGURADORAS
-                                </Heading>
-                                <br />
-                                <Heading
-                                    textAlign="start"
-                                    fontSize="16px"
-                                    fontFamily="Chivo"
-                                    fontWeight="400"
-                                >
-                                    Especialista em Direito do Seguro, André Dantas é ex-professor
-                                    da<br />Escola Nacional de Seguros e tem mais de 30 anos de experiência
-                                    com<br />seguradoras.
-                                </Heading>
-                            </VStack>
-                        </HStack>
-                        <HStack
-                            w="100%"
-                            zIndex="3"
-                            justifyContent="center"
-                            alignItems="center"
-                            gap="90"
-                        >
-
-                            <Image
-                                w="200px"
-                                src={AsteriscoVerde}
-                                mt="-40px"
-                            />
-
-                            <Stack
-                                w={flexHigth}
-                                justifyContent="center"
-                                alignItems="center"
-                                gap="5"
-                            >
-                                <Heading
-                                    textAlign="start"
-                                    fontSize="32px"
-                                    fontFamily="Chivo"
-                                    fontWeight="400"
-                                >
-                                    NOSSA EQUIPE CONHECE <span style={
-                                        {
+                                <Stack>
+                                    <Heading
+                                        textAlign="start"
+                                        fontSize="32px"
+                                        fontFamily="Chivo"
+                                        fontWeight="400"
+                                    >
+                                        + DE 30 ANOS DE <span style={{
                                             fontFamily: 'Libre Baskerville',
                                             fontStyle: 'italic',
-                                            fontSize: '34px',
+                                            fontSize: '42px',
                                             fontWeight: '400'
-                                        }
-                                    }>intimamente</span> AS CLÁUSULAS
-                                </Heading>
-                                <Heading
-                                    textAlign="start"
-                                    fontSize="14px"
-                                    fontFamily="Chivo"
-                                    fontWeight="400"
-                                >
-                                    Algumas apólices de seguradoras podem conter mais de 120 páginas.
+                                        }} >experiência</span> COM<br />SEGURADORAS
+                                    </Heading>
                                     <br />
+                                    <Heading
+                                        textAlign="start"
+                                        fontSize="16px"
+                                        fontFamily="Chivo"
+                                        fontWeight="400"
+                                    >
+                                        Especialista em Direito do Seguro, André Dantas é ex-professor
+                                        da<br />Escola Nacional de Seguros e tem mais de 30 anos de experiência
+                                        com<br />seguradoras.
+                                    </Heading>
                                     <br />
-                                    Temos a qualificação necessária para prestar assessoria aos segurados
-                                    nas etapas pré e pós-contratual, além de análise prévia de aviso de sinistros,
-                                    evitando demandas judiciais e também atuando em ações em curso.
-                                </Heading>
-                            </Stack>
+                                    <Heading
+                                        textAlign="start"
+                                        fontSize="32px"
+                                        fontFamily="Chivo"
+                                        fontWeight="400"
+                                    >
+                                        NOSSA EQUIPE CONHECE <span style={
+                                            {
+                                                fontFamily: 'Libre Baskerville',
+                                                fontStyle: 'italic',
+                                                fontSize: '34px',
+                                                fontWeight: '400'
+                                            }
+                                        }>intimamente</span> AS CLÁUSULAS
+                                    </Heading>
+                                    <Heading
+                                        textAlign="start"
+                                        fontSize="14px"
+                                        fontFamily="Chivo"
+                                        fontWeight="400"
+                                    >
+                                        Algumas apólices de seguradoras podem conter mais de 120 páginas.
+                                        <br />
+                                        <br />
+                                        Temos a qualificação necessária para prestar assessoria aos segurados
+                                        nas etapas pré e pós-contratual, além de análise prévia de aviso de sinistros,
+                                        evitando demandas judiciais e também atuando em ações em curso.
+                                    </Heading>
+                                </Stack>
+                            </VStack>
                         </HStack>
                         <VStack
                             w="75%"
-                            mt="80px"
+                            mt="190px"
                             gap="10"
                             bg="#0A292D"
                             p="0px 40px 0px 40px"

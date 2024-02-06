@@ -177,21 +177,21 @@ export default function Servicos() {
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="40px"
+                                    fontSize="35px"
                                     fontFamily="Chivo"
 
                                 >
                                     AUTOMOVEL
                                 </Heading>
                                 <Heading
-                                    fontSize="20px"
+                                    fontSize="16px"
                                     fontFamily="Chivo"
                                     fontWeight="600"
                                 >
                                     Proteção total do seus direitos para seu veículo
                                 </Heading>
                                 <Heading
-                                    fontSize="16px"
+                                    fontSize="14px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                 >
@@ -199,7 +199,7 @@ export default function Servicos() {
                                     direitos em casos de colisão, roubo, incêndio e danos a terceiros.
                                 </Heading>
                                 <Heading
-                                    fontSize="16px"
+                                    fontSize="14px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                 >
@@ -207,7 +207,7 @@ export default function Servicos() {
                                     garantindo que você tenha a cobertura que merece.
                                 </Heading>
                                 <Heading
-                                    fontSize="16px"
+                                    fontSize="14px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                 >
@@ -248,7 +248,7 @@ export default function Servicos() {
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="40px"
+                                    fontSize="35px"
                                     fontFamily="Chivo"
                                     textAlign="end"
 
@@ -256,7 +256,7 @@ export default function Servicos() {
                                     VIDA E ACIDENTES PESSOAIS
                                 </Heading>
                                 <Heading
-                                    fontSize="20px"
+                                    fontSize="16px"
                                     fontFamily="Chivo"
                                     fontWeight="600"
                                     textAlign="end"
@@ -264,7 +264,7 @@ export default function Servicos() {
                                     Garantindo a proteção do que é mais valioso
                                 </Heading>
                                 <Heading
-                                    fontSize="18px"
+                                    fontSize="14px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                     textAlign="end"
@@ -274,7 +274,7 @@ export default function Servicos() {
                                     cumpram suas obrigações.
                                 </Heading>
                                 <Heading
-                                    fontSize="18px"
+                                    fontSize="14px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                     textAlign="end"
@@ -336,7 +336,7 @@ export default function Servicos() {
                                 gap="5"
                             >
                                 <Heading
-                                    fontSize="40px"
+                                    fontSize="35px"
                                     fontFamily="Chivo"
 
                                 >
@@ -350,7 +350,7 @@ export default function Servicos() {
                                     Mais segurança para o seu patrimônio
                                 </Heading>
                                 <Heading
-                                    fontSize="18px"
+                                    fontSize="16px"
                                     fontFamily="Chivo"
                                     fontWeight="200"
                                 >
